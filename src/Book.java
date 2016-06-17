@@ -5,7 +5,7 @@ public class Book {
 	private String author;
 	private String description;
 	private double price;
-	private boolean isInStock;
+	private boolean isInstock;
 	
 	//Book book=new Book();
 	
@@ -63,6 +63,20 @@ public class Book {
 	
 	public void setPrice(double price){
 		this.price=price;
+	}
+	public void setIsInstock(boolean isInstock){
+		this.isInstock=isInstock;
+	}
+	public boolean checkInstock(){
+		if(this.isInstock=true){
+			System.out.println("Book is in stock");
+			return true;
+		}
+		else if (this.isInstock=false){
+			System.out.print("Book is not in stock");
+			return false;
+		}
+		else return true;
 	}
 	
 	public void getDisplayText(){
