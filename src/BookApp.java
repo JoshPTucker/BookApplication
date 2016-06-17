@@ -7,9 +7,12 @@ public class BookApp {
 		Scanner keyboard = new Scanner(System.in);
 		String choice;
 		System.out.println("Welcome" + "\n Would you like to create entry or enter and sku?");
-		System.out.println("Enter \"Create new\" or \" sku\"");
+		System.out.println("Enter \"Create\" or \" sku\"");
 		choice = keyboard.next();
-		if (choice.equalsIgnoreCase("Create new")) {
+		
+		
+		if (choice.equals("create")) {
+			//System.out.println("im a debug statement");
 			boolean cont = true;
 
 			while (cont) {
@@ -17,29 +20,35 @@ public class BookApp {
 
 				System.out.println("Enter author name");
 				book.setAuthor(keyboard.nextLine());
-
+				
 				System.out.println("Enter book title");
-				book.setTitle(keyboard.next());
+				book.setTitle(keyboard.nextLine());
 
 				System.out.println("Enter Book Description");
 				book.setDescription(keyboard.nextLine());
-				//
+				
 				System.out.print("Enter price");
 				book.setPrice(keyboard.nextDouble());
 
 				book.getDisplayText();
-				System.out.print("Would you like to continue? " + "\n y or n?");
+				System.out.print("\nWould you like to continue? " + "\n y or n?");
 				if (keyboard.next().equals("y")) {
 					cont = true;
 				} else {
 					cont = false;
 				}
-				keyboard.close();
+				
+				
 			}
 		} else if (choice.equalsIgnoreCase("sku")) {
+			Book book2=new Book();
 			System.out.println("Enter sku");
+			choice =keyboard.next();
+		//BookDb.setSKU();
+			BookDb.getbook(choice);
 			
-			//Book book2 = Book.getBook(book2.setSKU(keyboard.next()));
+			book2.getDisplayText();
 		}
+		keyboard.close();
 	}
 }

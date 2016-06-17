@@ -5,11 +5,12 @@ public class BookDb {
 	public  String getSKU(){
 		return sku;
 	}
-	public void setSKU(String sku){
-		this.sku = sku;
+	public static void setSKU(String s){
+		sku = s;
 	}
 	
-	public static Book  getbook(String Sku){
+	public static Book  getbook(String s){
+		sku=s;
 		Book b = new Book();
 		
 		b.setTitle(sku);
@@ -57,13 +58,7 @@ public class BookDb {
 				b.setTitle("Raspberry Pi Projects for the Evil Genius");
 				b.setIsInstock(true);
 			}
-//			else if (sku.equals("Java1001")){
-//				b.setAuthor("");
-//				b.setDescription(description);
-//				b.setPrice(price);
-//				b.setTitle(title);
-//				b.setIsInstock(true);
-//			}
+b.getDisplayText();
 			return b;
 		
 	}
